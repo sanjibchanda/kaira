@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
@@ -16,9 +18,86 @@
 </head>
 
 <body>
-  <h1 class="text-muted">
-    Hello world!
-  </h1>
+  <!-- top-bar -->
+  <section class="bg-black text-white text-center">
+    <div class="container max-w-[1320px] mx-auto px-3 py-3">
+      <p class="font-heading font-medium text-sm lg:text-base">Today Only: Up to <span
+          class="bg-primary inline-block rounded-sm px-1 lg:px-2">40%</span> Off
+        Best-Selling
+        Gear!</p>
+    </div>
+  </section>
+
+  <!-- header -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-white">
+    <div class="container max-w-[1320px] mx-auto px-3">
+      <div class="flex items-center justify-between py-4">
+        <!-- logo -->
+        <img src="./images/logo.svg" alt="logo" class="max-w-[160px] lg:max-w-[220px]" />
+        <!-- Nav Menu -->
+        <div id="mobileMenu"
+          class="fixed top-0 right-0 h-full w-[320px] bg-white shadow-lg p-2 z-50 transform translate-x-full lg:translate-x-0 lg:static lg:h-auto lg:p-0 lg:w-auto lg:shadow-none lg:bg-transparent transition-transform duration-300 ease-in-out">
+          <!-- Close Button -->
+          <div class="flex justify-end mb-4 lg:hidden">
+            <button class="text-2xl" aria-label="Close menu">
+              <img src="./images/close.svg" alt="close" class="close">
+            </button>
+          </div>
+
+          <ul class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6">
+            <li><a href="#" class="block p-2 hover:text-blue-600">Shop</a></li>
+            <li><a href="#" class="block p-2 hover:text-blue-600">Collections</a></li>
+            <li><a href="#" class="block p-2 hover:text-blue-600">Deals & Offers</a></li>
+            <li><a href="#" class="block p-2 hover:text-blue-600">Accessories</a></li>
+            <li><a href="#" class="block p-2 hover:text-blue-600">Contact Us</a></li>
+            <li class="lg:hidden"><a href="#" class="block p-2 hover:text-blue-600">Account</a></li>
+            <li class="lg:hidden relative"><a href="#" class="block p-2 hover:text-blue-600">Wishlist</a>
+              <span
+                class="absolute top-0 -right-0 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full ">1</span>
+            </li>
+          </ul>
+        </div>
+        <!-- icon Menu -->
+        <div>
+          <ul class="flex gap-3 lg:gap-6 navMenu">
+            <li><a href="#"><img src="./images/search.svg" alt="search" class="w-5 search"></a>
+            </li>
+            <li class="hidden lg:block"><a href="#"><img src="./images/user-line.svg" alt="user" class="w-5"></a></li>
+            <li class="hidden lg:block relative"><a href="#"><img src="./images/wishlist-line.svg" alt="wishlist"
+                  class="w-5">
+                <span
+                  class="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full ">1</span></a>
+            </li>
+            <li class="relative">
+              <a href="#"><img src="./images/cart.svg" alt="shopping-cart" class="w-5">
+                <span
+                  class="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full ">1</span>
+              </a>
+            </li>
+            <li>
+              <!-- Hamburger -->
+              <button class="text-xl lg:hidden flex" aria-label="Open menu">
+                <img src="./images/bars-outline.svg" alt="bars-outline" class="bars">
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- bg-Overlay -->
+      <div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+      <!-- Search Overlay -->
+      <div id="searchOverlay" class="fixed inset-0 z-50 bg-white/95 hidden flex items-center justify-center px-4">
+        <div class="w-full max-w-xl">
+          <input type="text" placeholder="Search products..."
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-lg outline-none shadow-md" />
+          <button id="closeSearch" class="absolute top-4 right-4">
+            <img src="./images/close.svg" alt="close">
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
